@@ -1,0 +1,172 @@
+<html>
+<head>
+ <title>Image Restoration</title>
+ <link rel='Stylesheet' href='style.css'>
+</head>
+
+<body>
+ <table width="100%" border="0" cellspacing="5" cellpadding="5" bgcolor = rgb(232,232,232)>
+  <tr>
+   <td colspan="2" valign="top">
+    <table width="100%">
+     <tr>
+      <td><img src="logo\logo_help.jpg" width="130"></td>
+      <td><font size=7>Image Restoration</font></td>
+     </tr>
+    </table>
+   </td>
+  </tr>
+
+  <tr>
+   <td width="20%" valign="top">
+    <table width="100%" cellspacing="10">
+     <tr><td><a href="Home.html">Home</a></td></tr>
+     <tr><td><a href="Getting_Started.html">Getting Started</a></td></tr>
+     <tr><td><a href="Basics.html">Basics</a></td></tr>
+     <tr><td><a href="Degrade.html">Degrade</a></td></tr>
+     <tr><td><a href="Restore.html">Restore</a></td></tr>
+     <tr><td><a href="About_Us.html">About Us</a></td></tr>
+    </table>
+   </td>
+
+   <td valign="top" bgcolor="WHITE">
+    <center><font size="5"><b>Basics</b></font></center>
+    <br>
+    
+    <font size=4>Introduction</font>
+    <br><br>
+    One of the most intriguing questions in image processing is the problem of recovering the desired or perfect image from a degraded version. In many instances one has the feeling that the degradations in the image are such that relevant information is close to being recognizable, if only the image could be sharpened just a little.
+    <br><br>
+    Blurring is a form of bandwidth reduction of the image due to imperfect image formation process. It can be caused by relative motion between the camera and the original scene, or by optical system, which is out of focus.
+    <br><br><br>
+    
+    <font size=4>What is Image Restoration?</font>
+    <br><br>
+    Image restoration deals with methods to improve the quality of blurred images. It especially deals with the recovery of information that was lost to the human eye during some degradation process.
+    <br><br>
+    For a better understanding of the underlying processes we make use of a Degradation Model:
+    <br><br>
+    <center>G (u,v) = H (u,v)* F (u,v) + N (u,v)</center>
+    <center><img src="basics\degradation_model.jpg"></center>
+    where G and F are the Fourier transforms of the degraded image g and the input image f, respectively. H is called the degradation function, and N is a noise term modeled as an additive value.
+    <br><br><br>
+    
+    <font size=4>Requirements for Restoration</font>
+    <br><br>
+    The successful restoration of blurred image requires accurate estimation of PSF parameters. In our project, we deal with images, which are blurred by the relative motion between the imaging system and the original scene. Thus, given a motion blurred and noisy image, the task is to identify the point spread function parameters and apply the restoration filter to get an approximation to the original scene.
+    <br><br>
+    Parameter estimation is based on the observation that image characteristics along the direction of motion are different than the characteristics in other directions. The PSF of motion blur is characterized by two parameters namely, blur direction and blur length.
+    <br><br><br>
+    
+    <font size=4>Blur Parameters</font>
+    <br><br>
+    <b>Point Spread Function (PSF): </b>When the intensity of the observed point image is spread over several pixels, this is known as the Point Spread Function (PSF).
+    <table align="center">
+     <tr align="center">
+      <td><img src="basics\original_dot_psf.jpg"></td>
+      <td> -> </td>
+      <td><img src="basics\degraded_dot_psf.jpg"></td>
+     </tr>
+     <tr align="center">
+      <td>Original</td>
+      <td></td>
+      <td>Degraded</td>
+     </tr>
+    </table>
+    <br><br>
+    <b>Length: </b>Blur Length is the no. of pixels by which the image is degraded. It is the no. of pixel positions by which a pixel is shifted from its original position.
+    <table align="center">
+     <tr align="center">
+      <td><img src="basics\dot.jpg"></td>
+      <td> -> </td>
+      <td><img src="basics\dot_blur_len.jpg"></td>
+     </tr>
+     <tr align="center">
+      <td>Original</td>
+      <td></td>
+      <td>Degraded</td>
+     </tr>
+    </table>
+    <br><br>
+    <b>Angle: </b>Blur Angle is the angle at which the image is degraded.
+    <table align="center">
+     <tr align="center">
+      <td><img src="basics\dot.jpg"></td>
+      <td> -> </td>
+      <td><img src="basics\dot_blur_angle.jpg"></td>
+     </tr>
+     <tr align="center">
+      <td>Original</td>
+      <td></td>
+      <td>Degraded</td>
+     </tr>
+    </table>
+    <br><br><br>
+    
+    <font size=4>Types of Noise</font>
+    <br><br>
+    <b>Salt & Pepper: </b>As the name suggests, this noise looks like salt and pepper. It gives the effect of "On and Off" pixels.
+    <table align="center">
+     <tr align="center">
+      <td><img src="basics\dot.jpg"></td>
+      <td> -> </td>
+      <td><img src="basics\salt_&_pepper.jpg"></td>
+     </tr>
+     <tr align="center">
+      <td>Original</td>
+      <td></td>
+      <td>Degraded</td>
+     </tr>
+    </table>
+    <br><b>Gaussian: </b>This is Gaussian White Noise. It requires mean and variance as the additional inputs.
+    <table align="center">
+     <tr align="center">
+      <td><img src="basics\dot.jpg"></td>
+      <td> -> </td>
+      <td><img src="basics\gaussian.jpg"></td>
+     </tr>
+     <tr align="center">
+      <td>Original</td>
+      <td></td>
+      <td>Degraded</td>
+     </tr>
+    </table>
+    <br><b>Poisson: </b>Poisson noise is not an artificial noise. It is a type of noise which is added from the data instead of adding artificial noise to the data.
+    <table align="center">
+     <tr align="center">
+      <td><img src="basics\dot.jpg"></td>
+      <td> -> </td>
+      <td><img src="basics\poisson.jpg"></td>
+     </tr>
+     <tr align="center">
+      <td>Original</td>
+      <td></td>
+      <td>Degraded</td>
+     </tr>
+    </table>
+    <br><b>Speckle: </b>It is a type of multiplicative noise. It is added to the image using the equation J=I+n*I, where n is uniformly distributed random noise with mean 0 and variance V.
+    <table align="center">
+     <tr align="center">
+      <td><img src="basics\dot.jpg"></td>
+      <td> -> </td>
+      <td><img src="basics\speckle.jpg"></td>
+     </tr>
+     <tr align="center">
+      <td>Original</td>
+      <td></td>
+      <td>Degraded</td>
+     </tr>
+    </table>
+   </td>
+  </tr>
+
+  <tr>
+   <td colspan="3" align="center">
+    <font size="-1">
+     Copyright © 2004 - 2005, XYZ. All Rights Reserved.
+    </font>
+   </td>
+  </tr>
+ </table>
+</body>
+</html>

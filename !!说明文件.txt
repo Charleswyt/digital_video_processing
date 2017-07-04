@@ -1,0 +1,51 @@
+姓名：王运韬
+学号：20168018627123
+
+文件名					功能
+
+image_fft.m				交换两幅图像的幅度谱和相位谱
+edge_detection.m			不同算子的边缘检测比较
+motion_estimation			块匹配运动估计
+	pyramid_3D.m			高斯金字塔模型
+	imgPSNR.m			计算PSNR
+	minCost.m			计算宏块的最小MAD值
+	costFuncMAD.m			计算宏块内MAD值
+	Est4SS.m			四步搜索运动估计脚本
+	EstDS.m				菱形搜索运动估计脚本
+	EstEs.m				全搜索运动估计脚本
+	EstNTSS.m			新三步搜索运动估计脚本
+	EstTSS.m			三步搜索运动估计脚本
+	EstEs_function.m		全搜索运动估计函数
+	EtEs_pyramid.m			基于高斯金字塔的全搜索运动估计脚本
+	motionEst.m			多种搜索方法运动估计效果比较脚本
+	motionEst4SS.m			四步搜索运动估计函数
+	motionEstDS.m			菱形搜索运动估计函数
+	motionEstES.m			全搜索运动估计函数
+	motionEstNTSS.m			新三步搜索运动估计函数
+	motionEstSESTSS.m		简化版三步搜索运动估计函数
+	motionEstTSS.m			三步搜索运动估计函数
+	motionEstAnalysis.m		比较多种搜索方法下的峰值信噪比和搜索速度
+	motionComp.m			计算预测帧
+	18.jpg				参考帧
+	19.jpg				当前帧
+background_substraction.m		中值法、均值法实现背景消除
+show_video_info.m			显示当前视频的参数信息
+motion_estimation_substraction		加噪视频运动估计
+	frame_sequence			原始视频帧
+	frame_noise_sequence		加噪视频帧
+	14.jpg				原始参考帧
+	15.jpg				原始当前帧
+	14_noise.jpg			加噪参考帧
+	15_noise.jpg			加噪当前帧
+	add_gaussian_noise_to_frames.m	给视频序列添加高斯噪声
+	costFuncMAD.m			计算宏块MAD值
+	get_frame_sequence.m		获取视频序列
+	minCost.m			计算最小MAD值
+	motion_estimation_noise.m	多种搜索方式下对加噪视频进行运动估计
+	motion_estimation_noise_beta.m	全搜索方式下对加噪视频进行运动估计(简化版)
+	motionComp.m			计算预测帧
+	motionEstES.m			全搜索运动估计函数
+
+lena_gray.bmp				待处理图像1
+Barbara.bmp				待处理图像2
+singleball.avi				待处理视频

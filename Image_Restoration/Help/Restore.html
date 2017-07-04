@@ -1,0 +1,108 @@
+<html>
+<head>
+ <title>Image Restoration</title>
+ <link rel='Stylesheet' href='style.css'>
+</head>
+
+<body>
+ <table width="100%" border="0" cellspacing="5" cellpadding="5" bgcolor = rgb(232,232,232)>
+  <tr>
+   <td colspan="2" valign="top">
+    <table width="100%">
+     <tr>
+      <td><img src="logo\logo_help.jpg" width="130"></td>
+      <td><font size=7>Image Restoration</font></td>
+     </tr>
+    </table>
+   </td>
+  </tr>
+
+  <tr>
+   <td width="20%" valign="top">
+    <table width="100%" cellspacing="10">
+     <tr><td><a href="Home.html">Home</a></td></tr>
+     <tr><td><a href="Getting_Started.html">Getting Started</a></td></tr>
+     <tr><td><a href="Basics.html">Basics</a></td></tr>
+     <tr><td><a href="Degrade.html">Degrade</a></td></tr>
+     <tr><td><a href="Restore.html">Restore</a></td></tr>
+     <tr><td><a href="About_Us.html">About Us</a></td></tr>
+    </table>
+   </td>
+
+   <td valign="top" bgcolor="WHITE">
+    <center><font size="5"><b>Restore</b></font></center>
+    <br>
+    
+    This is one of the main applications of this program. Just give some inputs and we will try to restore it.
+    <br><br><br>
+    
+    <font size=4>Required inputs</font>
+    <br><br>
+    You will need an image which you wish to restore. You need to provide the following parameters:
+    <ul>
+     <li>Type of filter
+     <li>Blur length
+     <li>Blur angle
+     <li>Additional parameters depending on the type of filter
+    </ul>
+    <a href="Basics.html">Click Here</a> to know what these parameters mean.
+    <br><br>
+    <b>Note:</b>
+    <ul>
+     <li>Use the 'Estimate' button to let us estimate what values are right for your image to restore.
+     <li>The angle estimate button returns 10 highly probable blur angles. Use the 'Next' button to go through the possible values.
+    </ul>
+    <br><br>
+    
+    <font size=4>Types of Filters</font>
+    <br><br>
+    <ul>
+     <li><b>Inverse Filter:</b>
+     <blockquote>This is a very basic restoration filter. It does not require any other parameter. This filter generally gives poor results thus we do not recommend it.</blockquote>
+     <li><b>Wiener Filter:</b>
+     <blockquote>This filter gives descent results. Its quite fast too. It requires Signal to Noise Ratio (SNR). Lower the SNR, better the results.<br><br><b>Note:</b> Use the 'Estimate SNR' button to let us recommend you some value.</blockquote>
+     <li><b>Lucy - Richardson:</b>
+     <blockquote>This filter is one of the most robust filters. Its immune to almost everything. Since it is an iterative filter, it requires the no. of iterations.<br><br><b>Note:</b> Increasing the iterations significantly increases the amount of time taken to restore an image. Keep no. of iterations to approximately 100.</blockquote>
+     <li><b>Compare Filters:</b>
+     <blockquote>You can compare the results of the different filters. We provide an indepth report to help you assist in selection of the right filter. Comparison is done using some predefined methods.</blockquote>
+    </ul>
+    <br>
+    
+    <font size=4>How to Restore?</font>
+    <br><br>
+    Just follow these steps to restore an image:
+    <ol type="I">
+     <li>Open a degraded image.
+     <li>Input the blur parameters 'Length' & 'Angle'. Use the slider or the text field to enter these parameters.
+     <li>Select the additional parameters if needed.
+     <li>Click on 'Restore Image' button.
+    </ol>
+    <br>
+    <b>Tips:</b>
+    <ul>
+     <li>Use the 'Estimate' button to let us estimate what values are right for your image to restore.
+     <li>You can also save the degraded image from the File->Save.
+    </ul>
+    <b>Note:</b>
+    <ul>
+     <li>Our estimation may go wrong. They are approximate values. So for efficient restoration try other values too.
+     <li>This program can work only on gray scale image. Incase you input a color image, it will be converted to gray scale image.
+     <li>There is the 'Expert Mode' which you can use once you get an idea of how the estimation algorithms work.
+      <ul>
+       <li>'Expert Mode' in angle estimation displays the edges in the image. From there you can say whats the blur angle.
+       <li>'Expert Mode' in length estimation shows a plot. The first negative value is the blur length.
+      </ul>
+    </ul>
+   </td>
+  </tr>
+
+  <tr>
+   <td colspan="3" align="center">
+    <font size="-1">
+     Copyright © 2004 - 2005, XYZ. All Rights Reserved.
+    </font>
+   </td>
+  </tr>
+ </table>
+</body>
+</html>

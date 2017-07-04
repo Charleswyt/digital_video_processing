@@ -1,0 +1,1 @@
+This program gets an image and the desired number of partitions and finds the means of the different classes and provides a classified image.
